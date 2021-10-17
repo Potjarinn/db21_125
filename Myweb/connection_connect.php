@@ -1,9 +1,9 @@
 <?php
 $servername = "localhost";
-$username = "db21_125";
-$password = "db21_125";
+$username = "db21_120";
+$password = "db21_120";
 
-$dbname = "db21_125";
+$dbname = "db21_120";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
