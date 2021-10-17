@@ -1,12 +1,12 @@
 <?php
-$controllers = array('home'=>['home','error'],'hospital'=>['index','newhospital','addhospital',
+$controllers = array('home'=>['home','error'],'hospital'=>['index','newhospital','addhospital','search',
 'updateForms','update','deleteconfirm','delete']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller){
         case "home": $controller = new HomeController();break;
-        case "hospital": require_once("./models/hospitalmodels.php");
+        case "hospital": require_once("models/hospitalmodels.php");
                          //require_once("./models/hospitalmodels.php");
             $controller = new hospital();break;
     }
