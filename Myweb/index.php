@@ -8,12 +8,12 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     $controller = 'home';
     $action = 'home';
 }
-?>
-</head>
+?><html>
+<head></head>
 <body>
 <?php echo "controller = ".$controller.",action = ".$action; ?>
-<br><a href="?controller=home&action=home">Home</a>
-    <a href="?controller=hospital&action=index">Hospital</a>
+<br><a href="?controller=home&action=home">[Home]</a>
+    <a href="?controller=hospital&action=index">[Hospital]</a>
 <?php require_once("routes.php"); ?>
 
 
