@@ -4,27 +4,32 @@ class hospital
     public function index() 
     {
         $hospitalmodellist = hospitalModels::getAll();
-        require_once('./views/hospital/indexhospital.php');
+        require_once('views/hospital/indexhospital.php');
     }
 
     public function newhospital()
     {
-        $hospitalmodellist = hospitalModels::getAll();
-        //$pricemodelsList = priceModels::getAll();
-        require_once('./views/hospital/newhospital.php');
+        $hospitalmodellist2 = hospitalModels::getAll();
+        require_once('views/hospital/newhospital.php');
     }
 
     public function addhospital()
     {
         $hospital_id = $_GET['hospital_id'];
-        $name = $_GET['name'];
-        $phone = $_GET['phone'];
-        $address = $_GET['address'];
-        $county = $_GET['county'];
-        $province = $_GET['province'];
-        hospitalModels::Add($hospital_id,$name,$phone,$address,$county,$province);
-
+        $name_H = $_GET['name_H'];
+        $phone_H = $_GET['phone_H'];
+        $address_H = $_GET['address_H'];
+        $county_H = $_GET['county_H'];
+        $province_H = $_GET['province_H'];
+        hospitalModels::Add($hospital_id,$name_H,$phone_H,$address_H,$county_H,$province_H);
         hospital::index();
+     }
+
+     public function search()
+     {
+         $key = $_GET['key'];
+         $hospitalmodellist3 = hospitalModels::search($key);
+         require_once('views/hospital/indexhospital.php');
      }
 
 
@@ -39,13 +44,13 @@ class hospital
      public function update()
      {
         $hospital_id = $_GET['hospital_id'];
-        $name = $_GET['name'];
-        $phone = $_GET['phone'];
-        $address = $_GET['address'];
-        $county = $_GET['county'];
-        $province = $_GET['province'];
+        $name_H = $_GET['name_H'];
+        $phone_H = $_GET['phone_H'];
+        $address_H = $_GET['address_H'];
+        $county_H = $_GET['county_H'];
+        $province_H = $_GET['province_H'];
         $hospitalid = $_GET['hospitalid'];
-        hospitalModels::update($hospital_id,$name,$phone,$address,$county,$province,$hospitalid);
+        hospitalModels::update($hospital_id,$name_H,$phone_H,$address_H,$county_H,$province_H,$hospitalid);
         hospital::index();
      }
 
