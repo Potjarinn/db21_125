@@ -60,7 +60,8 @@ class hospitalModels{
         $hospitalmodelList  = [];
         echo "gg";
         require("connection_connect.php");
-        $sql = "SELECT * FROM `Hospital` where (hospital_id like %'$key'% or name_H like %'$key'% or phone_H like %'$key'% OR address_H like %'$key'% or county_H like %'$key'% or province_H like %'$key'%)";
+        $sql = "SELECT * FROM `Hospital` where (hospital_id like '%$key%' or name_H like '%$key%' or phone_H like '%$key%' or 
+        address_H like '%$key%' or county_H like '%$key%' or province_H like '%$key%')";
         $result = $conn->query($sql);
         echo "aa";
         while($my_row = $result->fetch_assoc())
