@@ -58,12 +58,10 @@ class hospitalModels{
     public static function search($key)
     {
         $hospitalmodelList  = [];
-        echo "gg";
         require("connection_connect.php");
         $sql = "SELECT * FROM `Hospital` where (hospital_id like '%$key%' or name_H like '%$key%' or phone_H like '%$key%' or 
         address_H like '%$key%' or county_H like '%$key%' or province_H like '%$key%')";
         $result = $conn->query($sql);
-        echo "aa";
         while($my_row = $result->fetch_assoc())
         {
             $hospital_id = $my_row[hospital_id];
@@ -75,7 +73,6 @@ class hospitalModels{
             $hospitalmodelList[] = new hospitalModels($hospital_id,$name_H,$phone_H,$address_H,$county_H,$province_H);
         }
         require("connection_close.php");
-        echo "uu";
         return $hospitalmodelList;
        
     }
