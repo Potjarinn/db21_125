@@ -33,12 +33,12 @@ class hospital
      }
 
 
-     public function updateForms()
+     public function updateforms()
      {
          $ht = $_GET['hospital_id'];
          $hospitalmodels = hospitalModels::get($ht);
-         $hospitalmodellist = hospitalModels::getAll();
-         require_once('views/priceproduct/updateform.php');
+        // $hospitalmodellist = hospitalModels::getAll();
+         require_once('views/hospital/updateform.php');
      }
 
      public function update()
