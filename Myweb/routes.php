@@ -1,6 +1,6 @@
 <?php
-$controllers = array('home'=>['home','error'],'hospital'=>['index','newhospital','addhospital','search',
-'updateForms','update','deleteconfirm','delete']);
+$controllers = array('home'=>['home','error'],
+'hospital'=>['index','newhospital','addhospital','search','updateforms','update','deleteconfirm','delete']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
