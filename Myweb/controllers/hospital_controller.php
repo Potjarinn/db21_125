@@ -28,7 +28,7 @@ class hospital
      public function search()
      {
          $key = $_GET['key'];
-         $hospitalmodellist3 = hospitalModels::search($key);
+         $hospitalmodellist = hospitalModels::search($key);
          require_once('views/hospital/indexhospital.php');
      }
 
