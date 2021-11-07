@@ -1,14 +1,23 @@
 <?php
 $controllers = array('home'=>['home','error'],
-'hospital'=>['index','newhospital','addhospital','search','updateforms','update','deleteconfirm','delete']);
+'hospital'=>['index','newhospital','addhospital','search','updateforms','update','deleteconfirm','delete'],
+'doctor'=>['index','newdoctor','adddoctor','search','updateforms','update','deleteconfirm','delete'],
+'homeisolation'=>['index','newhomeisolation','adddhomeisolation','search','updateforms','update','deleteconfirm','delete']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller){
         case "home": $controller = new HomeController();break;
         case "hospital": require_once("models/hospitalmodels.php");
-                         //require_once("./models/hospitalmodels.php");
             $controller = new hospital();break;
+        case "doctor": require_once("models/doctormodels.php");
+                    require_once("models/hospitalmodels.php");
+            $controller = new doctor();break;
+        case "homeisolation": require_once("models/homeisolationmodels.php");
+                            require_once("models/doctormodels.php");
+                            require_once("models/hospitalmodels.php");
+                            require_once("models/patienmodels.php");
+            $controller = new homeisolation();break;
     }
     $controller->{$action}();
 }
