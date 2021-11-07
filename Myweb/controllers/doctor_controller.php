@@ -7,64 +7,61 @@ class doctor
         require_once('views/doctor/indexdoctor.php');
     }
 
-    public function newhospital()
+    public function newdoctor()
     {
-        $doctormodellist2 = doctorModels::getAll();
+        $hospitalmodellist2 = hospitalModels::getAll();
         require_once('views/doctor/newdoctor.php');
     }
 
-    public function addhospital()
+    public function adddoctor()
     {
+        $doctor_id = $_GET['doctor_id'];
+        $name_D = $_GET['name_D'];
+        $lastname_D = $_GET['lastname_D'];
+        $phone_D = $_GET['phone_D'];
         $hospital_id = $_GET['hospital_id'];
-        $name_H = $_GET['name_H'];
-        $phone_H = $_GET['phone_H'];
-        $address_H = $_GET['address_H'];
-        $county_H = $_GET['county_H'];
-        $province_H = $_GET['province_H'];
-        hospitalModels::Add($hospital_id,$name_H,$phone_H,$address_H,$county_H,$province_H);
-        hospital::index();
+        doctorModels::Add($doctor_id,$name_D,$phone_D,$hospital_id);
+        doctor::index();
      }
 
      public function search()
      {
          $key = $_GET['key'];
-         $hospitalmodellist = hospitalModels::search($key);
-         require_once('views/hospital/indexhospital.php');
+         $doctormodellist = doctorModels::search($key);
+         require_once('views/doctor/indexdoctor.php');
      }
 
 
      public function updateforms()
      {
-         $ht = $_GET['hospital_id'];
-         $hospitalmodels = hospitalModels::get($ht);
-        // $hospitalmodellist = hospitalModels::getAll();
-         require_once('views/hospital/updateform.php');
+         $ht = $_GET['doctor_id'];
+         $doctormodels = doctorModels::get($ht);
+         $hospitalmodellist = hospitalModels::getAll();
+         require_once('views/doctor/updateform.php');
      }
 
      public function update()
      {
+        $doctor_id = $_GET['doctor_id'];
+        $name_D = $_GET['name_D'];
+        $phone_D = $_GET['phone_D'];
         $hospital_id = $_GET['hospital_id'];
-        $name_H = $_GET['name_H'];
-        $phone_H = $_GET['phone_H'];
-        $address_H = $_GET['address_H'];
-        $county_H = $_GET['county_H'];
-        $province_H = $_GET['province_H'];
-        $hospitalid = $_GET['hospitalid'];
-        hospitalModels::update($hospital_id,$name_H,$phone_H,$address_H,$county_H,$province_H,$hospitalid);
-        hospital::index();
+        $doctorid = $_GET['doctorid'];
+        doctorModels::update($doctor_id,$name_D,$phone_D,$hospital_id,$doctorid);
+        doctor::index();
      }
 
      public function deleteconfirm()
      {
-        $hospital_id = $_GET['hospital_id'];
-        $hospitalmodels =  hospitalModels::get($hospital_id);
-        require_once('./views/hospital/deleteconfirm.php');
+        $doctor_id = $_GET['doctor_id'];
+        $doctormodels =  doctorModels::get($doctor_id);
+        require_once('./views/doctor/deleteconfirm.php');
      }
 
      public function delete()
      {
-         $hospitalid = $_GET['hospitalid'];
-         hospitalModels::delete($hospitalid);
-         hospital::index();
+         $doctorid = $_GET['doctorid'];
+         doctorModels::delete($doctorid);
+         doctor::index();
      }
 }?>
