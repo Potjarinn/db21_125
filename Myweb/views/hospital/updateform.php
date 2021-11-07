@@ -19,7 +19,7 @@
         value="<?php echo  $hospitalmodels->hospital_id;?>"/> </label><br>
        
     <input type="hidden" name="controller" value="hospital"/>
-    <input type="hidden" name="hospitalid " value="<?php echo $hospitalmodels->hospital_id;?>"/>
+    <input type="hidden" name="hospitalid" value="<?php echo $hospitalmodels->hospital_id;?>"/>
     <button type="submit" name="action" value="index"> Back </button>
     <button type="submit" name="action" value="update"> Update </button>
 </form>
