@@ -20,7 +20,7 @@ class hospitalModels{
     public static function get($hospital_id)
     {
         require("connection_connect.php");
-        $sql = "SELECT * FROM `Hospital`";
+        $sql = "SELECT * FROM `Hospital` WHERE hospital_id = $hospital_id";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $hospital_id = $my_row[hospital_id];
@@ -92,7 +92,7 @@ class hospitalModels{
     {
         require("connection_connect.php");
         $sql = "UPDATE `Hospital` SET `hospital_id`='$hospital_id',`name_H`='$name_H',`phone_H`='$phone_H',
-        `address_H`=$address_H,`county_H`='$county_H',`province_H`='$province_H' WHERE hospital_id='$hospitalid' ";
+        `address_H`='$address_H',`county_H`='$county_H',`province_H`='$province_H' WHERE hospital_id='$hospitalid' ";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
