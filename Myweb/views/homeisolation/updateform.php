@@ -1,14 +1,10 @@
 <form method="get" action="">
         
-<?php foreach($patienmodellist as $patien){
-            echo $patien->patient_id;
-        }?>
-
-    <label>IDcard <input type="text" name="patient_id">
+    <label>IDcard <select name="patient_id">
         <?php foreach($patienmodellist as $patien){
             echo "<option value=$patien->patient_id";
             if($patien->patient_id==$homeisolationmodels->patient_id){
-                echo "selected='selected'";
+                echo " selected='selected'";
             }
             echo ">$patien->id_card</option>";
         }?>
@@ -30,7 +26,7 @@
         <?php foreach($atkmodellist as $atk){
             echo "<option value=$atk->id_atk";
             if($atk->id_atk==$homeisolationmodels->id_atk){
-                echo "selected='selected'";
+                echo " selected='selected'";
             }
             echo ">$atk->id_atk</option>";
         }?>
@@ -40,7 +36,7 @@
         <?php foreach($doctormodellist as $doctor){
             echo "<option value=$doctor->hospital_id";
             if($doctor->doctor_id==$homeisolationmodels->doctor_id){
-                echo "selected='selected'";
+                echo " selected='selected'";
             }
             echo ">$doctor->name_D</option>";
         }?>
@@ -50,11 +46,13 @@
         <?php foreach($hospitalmodellist as $hospital){
             echo "<option value=$hospital->hospital_id";
             if($hospital->hospital_id==$homeisolationmodels->hospital_id){
-                echo "selected='selected'";
+                echo " selected='selected'";
             }
             echo ">$hospital->name_H</option>";
         }?>
-        </select></label><br>    
+        </select></label><br>  
+        
+        
     <input type="hidden" name="controller" value="homeisolation"/>
     <input type="hidden" name="patientid" value="<?php echo $homeisolationmodels->patient_id;?>"/>
     <button type="submit" name="action" value="index"> Back </button>
