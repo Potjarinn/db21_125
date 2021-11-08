@@ -10,6 +10,8 @@ Search</button>
 <table border = 3>
 <tr> <td>IDcard</td>
 <td>Address</td>
+<td>County</td>
+<td>Province</td>
 <td>Color</td>
 <td>IDatk</td>
 <td>Doctor</td>
@@ -18,13 +20,15 @@ Search</button>
 <?php foreach( $homeisolationmodellist as  $homelist)
 {
     echo "<tr> <td>$homelist->id_card</td>
-    <td>$homelist->address_Home</td> 
+    <td>$homelist->address_Home</td>
+    <td>$homelist->county_Home</td> 
+    <td>$homelist->province_Home</td>  
     <td>$homelist->color_name</td> 
     <td>$homelist->id_atk</td> 
     <td>$homelist->name_D</td> 
     <td>$homelist->name_H</td> 
-    <td>  <a href=?controller=homeisolation&action=updateforms&patien_id=$homelist->patien_id> update </a> </td>
-    <td>  <a href=?controller=homeisolation&action=deleteconfirm&patien_id=$homelist->patien_id> delete</a> </td></tr>";
+    <td>  <a href=?controller=homeisolation&action=updateforms&patient_id=$homelist->patient_id> update </a> </td>
+    <td>  <a href=?controller=homeisolation&action=deleteconfirm&patient_id=$homelist->patient_id> delete</a> </td></tr>";
 }
 echo "</table>";
  ?>
