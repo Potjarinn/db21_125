@@ -32,7 +32,7 @@ class atkModels{
             $id_b = $my_row[id_b];
             $id_staff_checkpoint = $my_row[id_staff_checkpoint];
             $atkmodelList[] = new patienModels($id_atk,$date_atk,$time_atk,$results,$id_b,$id_staff_checkpoint);
-       echo $id_atk;
+     
         }
         require("connection_close.php");
 
