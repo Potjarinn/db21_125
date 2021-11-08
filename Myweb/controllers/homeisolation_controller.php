@@ -39,7 +39,6 @@ class homeisolation
 
      public function updateforms()
      {
-         echo "ww";
          $ht = $_GET['patient_id'];
          $homeisolationmodels = homeisolationModels::get($ht);
          $hospitalmodellist = hospitalModels::getAll();
@@ -58,8 +57,9 @@ class homeisolation
         $province_Home = $_GET['province_Home'];
         $doctor_id = $_GET['doctor_id'];
         $hospital_id = $_GET['hospital_id'];
-        $patienid = $_GET['patienid'];
-        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patienid);
+        $patientid = $_GET['patientid'];
+        echo $address_Home;
+        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid);
         homeisolation::index();
      }
 
