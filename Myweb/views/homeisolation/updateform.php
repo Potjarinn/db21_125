@@ -19,8 +19,15 @@
     <label>Province <input type="text" name="province_Home"
         value="<?php echo  $homeisolationmodels->province_Home;?>"/> </label><br>
 
-    <label>Color <input type="text" name="color_name"
-        value="<?php echo  $homeisolationmodels->color_name;?>"/> </label><br>
+    <label>Color <select name="color_name">
+        <?php foreach($colormodellist as $color){
+            echo "<option value=$color->color_name";
+            if($color->color_name==$homeisolationmodels->color_name){
+                echo " selected='selected'";
+            }
+            echo ">$color->color_name</option>";
+        }?>
+        </select></label><br> 
     
     <label>IDatk <select name="id_atk">
         <?php foreach($atkmodellist as $atk){
