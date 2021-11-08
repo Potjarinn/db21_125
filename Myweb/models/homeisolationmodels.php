@@ -153,7 +153,7 @@ class homeisolationModels{
     public static function delete($patient_id)
     {
         require("connection_connect.php");
-        $sql = "DELETE FROM `Homeisolation` WHERE patient_id = $patient_id";
+        $sql = "DELETE FROM `Homeisolation` WHERE patient_id = '$patient_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
