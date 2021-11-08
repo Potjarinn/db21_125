@@ -19,13 +19,13 @@ class homeisolation
 
     public function addhomeisolation()
     {
-        $patien_id = $_GET['patien_id'];
+        $patient_id = $_GET['patient_id'];
         $address_Home = $_GET['address_Home'];
-        $color_name = $_GET['color_name'];
-        $id_atk = $_GET['id_atk'];
+        $county_Home = $_GET['county_Home'];
+        $province_Home = $_GET['province_Home'];
         $doctor_id = $_GET['doctor_id'];
         $hospital_id = $_GET['hospital_id'];
-        homeisolationModels::Add($patien_id,$address_Home,$color_name,$id_atk,$doctor_id,$hospital_id);
+        homeisolationModels::Add($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id);
         homeisolation::index();
      }
 
@@ -39,38 +39,41 @@ class homeisolation
 
      public function updateforms()
      {
-         $ht = $_GET['patien_id'];
+         echo "ww";
+         $ht = $_GET['patient_id'];
          $homeisolationmodels = homeisolationModels::get($ht);
          $hospitalmodellist = hospitalModels::getAll();
          $patienmodellist = patienModels::getAll();
          $doctormodellist = doctorModels::getAll();
+         $atkmodellist = atkModels::getAll();
+
          require_once('views/homeisolation/updateform.php');
      }
 
      public function update()
      {
-        $patien_id = $_GET['patien_id'];
+        $patient_id = $_GET['patient_id'];
         $address_Home = $_GET['address_Home'];
-        $color_name = $_GET['color_name'];
-        $id_atk = $_GET['id_atk'];
+        $county_Home = $_GET['county_Home'];
+        $province_Home = $_GET['province_Home'];
         $doctor_id = $_GET['doctor_id'];
         $hospital_id = $_GET['hospital_id'];
         $patienid = $_GET['patienid'];
-        homeisolationModels::update($patien_id,$address_Home,$color_name,$id_atk,$doctor_id,$hospital_id,$patienid);
+        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patienid);
         homeisolation::index();
      }
 
      public function deleteconfirm()
      {
-        $patien_id = $_GET['patien_id'];
-        $homeisolaationmodels =  homeisolationModels::get($patien_id);
+        $patient_id = $_GET['patient_id'];
+        $homeisolationmodels =  homeisolationModels::get($patient_id);
         require_once('./views/homeisolation/deleteconfirm.php');
      }
 
      public function delete()
      {
-         $patienid = $_GET['patienid'];
-         homeisolationModels::delete($patienid);
+         $patientid = $_GET['patientid'];
+         homeisolationModels::delete($patientid);
          homeisolation::index();
      }
 }?>
