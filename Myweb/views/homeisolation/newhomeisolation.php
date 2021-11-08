@@ -1,11 +1,5 @@
 <form method="get" action="">
     <br>
-    <?php foreach($patienmodellist4 as $newpatien){
-            echo $newpatien->patient_id;
-        }?>
-       
-
-    
     <label>IDcard<select name="patient_id">
         <?php foreach($patienmodellist4 as $newpatien){
             echo "<option value=$newpatien->patient_id>$newpatien->id_card</option>";
@@ -15,7 +9,12 @@
     <label>Address<input type="text" name="address_Home"/> </label><br>
     <label>County<input type="text" name="county_Home"/> </label><br>
     <label>Province<input type="text" name="province_Home"/> </label><br>
-    <label>Color<input type="text" name="color_name"/> </label><br>
+
+    <label>Color<select name="color_name">
+        <?php foreach($colormodellist6 as $newcolor){
+            echo "<option value=$newcolor->color_name>$newcolor->color_name</option>";
+        }?>
+        </select></label><br>
     
     <label>IDatk<select name="id_atk">
         <?php foreach($atkmodellist5 as $newatk){
