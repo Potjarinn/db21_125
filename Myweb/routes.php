@@ -18,6 +18,7 @@ function call($controller,$action){
                             require_once("models/hospitalmodels.php");
                             require_once("models/patienmodels.php");
                             require_once("models/atkmodels.php");
+                            require_once("models/colormodels.php");
             $controller = new homeisolation();break;
     }
     $controller->{$action}();
