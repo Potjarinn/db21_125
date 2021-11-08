@@ -14,6 +14,7 @@ class homeisolation
         $doctormodellist3 = doctorModels::getAll();
         $patienmodellist4 = patienModels::getAll();
         $atkmodellist5 = atkModels::getAll();
+        $colormodellist6 = colorModels::getAll();
         require_once('views/homeisolation/newhomeisolation.php');
     }
 
@@ -33,7 +34,7 @@ class homeisolation
      {
          $key = $_GET['key'];
          $homeisolationmodellist = homeisolationModels::search($key);
-         require_once('views/homeisolation/indexhomisolation.php');
+         require_once('views/homeisolation/indexhomeisolation.php');
      }
 
 
@@ -45,6 +46,7 @@ class homeisolation
          $patienmodellist = patienModels::getAll();
          $doctormodellist = doctorModels::getAll();
          $atkmodellist = atkModels::getAll();
+         $colormodellist = colorModels::getAll();
 
          require_once('views/homeisolation/updateform.php');
      }
