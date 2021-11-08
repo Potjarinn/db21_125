@@ -2,7 +2,7 @@
 $controllers = array('home'=>['home','error'],
 'hospital'=>['index','newhospital','addhospital','search','updateforms','update','deleteconfirm','delete'],
 'doctor'=>['index','newdoctor','adddoctor','search','updateforms','update','deleteconfirm','delete'],
-'homeisolation'=>['index','newhomeisolation','adddhomeisolation','search','updateforms','update','deleteconfirm','delete']);
+'homeisolation'=>['index','newhomeisolation','addhomeisolation','search','updateforms','update','deleteconfirm','delete']);
 
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
@@ -17,6 +17,7 @@ function call($controller,$action){
                             require_once("models/doctormodels.php");
                             require_once("models/hospitalmodels.php");
                             require_once("models/patienmodels.php");
+                            require_once("models/atkmodels.php");
             $controller = new homeisolation();break;
     }
     $controller->{$action}();
