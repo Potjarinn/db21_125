@@ -17,7 +17,7 @@ class patienModels{
 
     public static function getAll()
     {
-        echo yy;
+       
         $patientmodelList  = [];
         require("connection_connect.php");
         $sql = "SELECT * FROM `Patient`";
@@ -30,7 +30,7 @@ class patienModels{
             $color_name = $my_row[color_name];
             $id_atk = $my_row[id_atk];
             $patientmodelList[] = new patienModels($patient_id,$id_card,$type_P,$color_name,$id_atk);
-        echo $patient_id;
+        
         }
         require("connection_close.php");
 
