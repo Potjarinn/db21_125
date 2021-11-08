@@ -1,23 +1,35 @@
 <form method="get" action="">
     <br>
-    <label>IDcard<select name="patien_id">
+    <?php foreach($patienmodellist4 as $newpatien){
+            echo $newpatien->patient_id;
+        }?>
+       
+
+    
+    <label>IDcard<select name="patient_id">
         <?php foreach($patienmodellist4 as $newpatien){
-            echo "<option value=$newpatien->patien_id>$newpatien->id_card</option>";
+            echo "<option value=$newpatien->patient_id>$newpatien->id_card</option>";
         }?>
         </select></label><br>
+
     <label>Address<input type="text" name="address_Home"/> </label><br>
+    <label>County<input type="text" name="county_Home"/> </label><br>
+    <label>Province<input type="text" name="province_Home"/> </label><br>
     <label>Color<input type="text" name="color_name"/> </label><br>
+    
     <label>IDatk<select name="id_atk">
         <?php foreach($atkmodellist5 as $newatk){
-            echo "<option value=$newatk->id_atk</option>";
+            echo "<option value=$newatk->id_atk>$newatk->id_atk</option>";
         }?>
         </select></label><br>
+
     <label>Doctor<select name="doctor_id">
         <?php foreach($doctormodellist3 as $newdoctor){
             echo "<option value=$newdoctor->doctor_id>$newdoctor->name_D</option>";
         }?>
         </select></label><br>
-    <label>hospital<select name="hospital_id">
+
+    <label>Hospital<select name="hospital_id">
         <?php foreach($hospitalmodellist2 as $newhospital){
             echo "<option value=$newhospital->hospital_id>$newhospital->name_H</option>";
         }?>
