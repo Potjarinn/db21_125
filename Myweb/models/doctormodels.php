@@ -44,6 +44,7 @@ class doctorModels{
             $phone_D = $my_row[phone_D];
             $name_H = $my_row[name_H];
             $doctormodelList[] = new doctorModels($doctor_id,$name_D,$phone_D,$name_H);
+            echo $doctor_id;
         }
         require("connection_close.php");
 
