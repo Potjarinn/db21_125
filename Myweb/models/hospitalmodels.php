@@ -49,7 +49,7 @@ class hospitalModels{
             $county_H = $my_row[county_H];
             $province_H = $my_row[province_H];
             $hospitalmodelList[] = new hospitalModels($hospital_id,$name_H,$phone_H,$address_H,$county_H,$province_H);
-        echo $hospital_id;
+    
         }
         require("connection_close.php");
 
