@@ -29,7 +29,7 @@ class homeisolationModels{
 
     public static function get($patient_id)
     {
-        echo "get";
+        
         require("connection_connect.php");
         $sql = "SELECT d.patient_id, d.id_card, d.address_Home, d.county_Home, d.province_Home, d.color_name, 
         d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id, Hospital.name_H
@@ -38,7 +38,7 @@ class homeisolationModels{
         FROM Doctor INNER JOIN (SELECT Patient.patient_id, Patient.id_card, Patient.color_name,Patient.id_atk,Homeisolation.address_Home, 
         Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id     
         FROM Homeisolation INNER JOIN Patient ON Homeisolation.patient_id = Patient.patient_id) AS p ON Doctor.doctor_id = p.doctor_id) AS d 
-        ON d.hospital_id = Hospital.hospital_id WHERE patient_id = $patient_id";
+        ON d.hospital_id = Hospital.hospital_id WHERE patient_id = '$patient_id'";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
         $patient_id = $my_row[patient_id];
@@ -52,7 +52,6 @@ class homeisolationModels{
         $name_H = $my_row[name_H];
         $doctor_id = $my_row[doctor_id];
         $hospital_id = $my_row[hospital_id];
-        echo $patient_id;
         require("connection_close.php");
 
         return new homeisolationModels($patient_id,$id_card,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id);
@@ -138,11 +137,14 @@ class homeisolationModels{
         return ;
     }
 
-    public static function update($patient_id,$address_Home,$color_name,$id_atk,$doctor_id,$hospital_id,$patienid)
+    public static function update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid)
     {
+        echo "tt";
         require("connection_connect.php");
-        $sql = "UPDATE `Homeisolation` SET `patient_id`='$patient_id',`address_Home`='$address_Home',`color_name`='$color_name',
-        `id_atk`='$id_atk',`doctor_id`='$doctor_id',`hospital_id`='$hospital_id' WHERE patient_id='$patientid' ";
+        $sql = "UPDATE Homeisolation
+        SET patient_id = '$patient_id' , address_Home = '$address_Home', county_Home = '$county_Home' , province_Home = '$province_Home' , doctor_id= '$doctor_id', hospital_id = '$hospital_id'
+        WHERE patient_id = '$patientid'";
+        echo $patientid;
         $result = $conn->query($sql);
         require("connection_close.php");
         return "update success $result row";
