@@ -3,7 +3,8 @@ class homeisolation
 {
     public function index() 
     {
-        $homeisolationmodellist = homeisolationModels::getAll();
+        $homeisolationmodellist = homeisolationModels::getAllshow();
+        //$homeisolationmodellist = homeisolationModels::getAll();
         require_once('views/homeisolation/indexhomeisolation.php');
     }
 
@@ -63,7 +64,8 @@ class homeisolation
         $doctor_id = $_GET['doctor_id'];
         $hospital_id = $_GET['hospital_id'];
         $patientid = $_GET['patientid'];
-        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid);
+        $status_show = $_GET['status_show'];
+        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid,$status_show);
         homeisolation::index();
      }
 
