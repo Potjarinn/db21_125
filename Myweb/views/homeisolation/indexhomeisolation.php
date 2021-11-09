@@ -6,16 +6,16 @@
     <button type="submit" name="action" value="search">
 Search</button>
 </body></form></html>
-<table border = 3>
+<table border = 1>
 <tr> <td>เลขบัตรประชาชน</td>
 <td>ชื่อผู้ป่วย</td>
-<td>ที่อยู่</td>
+<td>ที่อยู่ผู้ป่วย</td>
 <td>เขต</td>
 <td>จังหวัด</td>
-<td>สี</td>
+<td>สีของอาการ</td>
 <td>รหัสATK</td>
-<td>แพทย์อาสา</td>
-<td>โรงพยาบาล</td>
+<td>ชื่อแพทย์อาสาที่ดูแล</td>
+<td>ชื่อโรงพยาบาลที่ดูแล</td>
 <td>Update</td><td>Delete</td> </tr>
 <?php foreach( $homeisolationmodellist as  $homelist)
 {
