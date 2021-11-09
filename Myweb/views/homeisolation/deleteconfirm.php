@@ -1,5 +1,7 @@
-<?php echo "<br>Are you sure to delete this student <br>
+<?php echo "<br>Are you sure to delete this Homeisolation? <br>
             <br>IDcard:$homeisolationmodels->id_card  
+            <br>Address:$homeisolationmodels->NamePeople
+            <br>Address:$homeisolationmodels->LastnameP
             <br>Address:$homeisolationmodels->address_Home
             <br>Address:$homeisolationmodels->county_Home  
             <br>Address:$homeisolationmodels->province_Home    
