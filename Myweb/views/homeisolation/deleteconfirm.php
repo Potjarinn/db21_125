@@ -1,14 +1,13 @@
 <?php echo "<br>Are you sure to delete this Homeisolation? <br>
             <br>เลขบัตรประชาชน:$homeisolationmodels->id_card  
-            <br>ชื่อ:$homeisolationmodels->NamePeople
-            <br>นามสกุล:$homeisolationmodels->LastnameP
-            <br>ที่อยู่:$homeisolationmodels->address_Home
+            <br>ชื่อผู้ป่วย:$homeisolationmodels->NamePeople $homeisolationmodels->LastnameP
+            <br>ที่อยู่ผู้ป่วย:$homeisolationmodels->address_Home
             <br>เขต:$homeisolationmodels->county_Home  
             <br>จังหวัด:$homeisolationmodels->province_Home    
-            <br>สี:$homeisolationmodels->color_name 
+            <br>สีของอาการ:$homeisolationmodels->color_name 
             <br>รหัสATK:$homeisolationmodels->id_atk  
-            <br>แพทย์อาสา:$homeisolationmodels->name_D 
-            <br>โรงพยาบาล:$homeisolationmodels->name_D<br>";?>
+            <br>ชื่อแพทย์อาสาที่ดูแล:$homeisolationmodels->name_D 
+            <br>ชื่อโรงพยาบาลที่ดูแล:$homeisolationmodels->name_D<br>";?>
 <form method="get" action="">
     <input type="hidden" name="controller" value="homeisolation"/>
     <input type="hidden" name="patientid" value="<?php echo $homeisolationmodels->patient_id;?>"/>
