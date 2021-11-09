@@ -1,5 +1,4 @@
-<br>
-พจรินทร์ ประเสริฐศรี 6220503309
+
 <br>new Hospital <a href=?controller=hospital&action=newhospital>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
@@ -8,13 +7,13 @@
 Search</button>
 </body></form></html>
 <table border = 3>
-<tr> <td>hospital_id</td>
-<td>name</td>
-<td>phone</td>
-<td>address</td>
-<td>county</td>
-<td>province</td>
-<td>update</td><td>delete</td> </tr>
+<tr> <td>Hospital_id</td>
+<td>Name</td>
+<td>Phone</td>
+<td>Address</td>
+<td>County</td>
+<td>Province</td>
+<td>Update</td><td>Delete</td> </tr>
 <?php foreach( $hospitalmodellist as  $hospitallist)
 {
     echo "<tr> <td>$hospitallist->hospital_id</td>
