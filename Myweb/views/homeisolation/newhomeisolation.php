@@ -6,6 +6,8 @@
         }?>
         </select></label><br>
 
+    <label>Name<input type="text" name="NamePeople"/> </label><br>
+    <label>Lastname<input type="text" name="LastnameP"/> </label><br>
     <label>Address<input type="text" name="address_Home"/> </label><br>
     <label>County<input type="text" name="county_Home"/> </label><br>
     <label>Province<input type="text" name="province_Home"/> </label><br>
