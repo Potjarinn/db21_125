@@ -1,10 +1,10 @@
 <?php echo "<br>Are you sure to delete this Hospital? <br>
-            <br>  hospital_id:$hospitalmodels->hospital_id  
-            <br>name:$hospitalmodels->name_H  
-            <br>phone:$hospitalmodels->phone_H 
-            <br>address:$hospitalmodels->address_H  
-            <br>county:$hospitalmodels->county_H 
-            <br>province:$hospitalmodels->province_H<br>";?>
+            <br>  Hospital_id:$hospitalmodels->hospital_id  
+            <br>Name:$hospitalmodels->name_H  
+            <br>Phone:$hospitalmodels->phone_H 
+            <br>Address:$hospitalmodels->address_H  
+            <br>County:$hospitalmodels->county_H 
+            <br>Province:$hospitalmodels->province_H<br>";?>
 <form method="get" action="">
     <input type="hidden" name="controller" value="hospital"/>
     <input type="hidden" name="hospitalid" value="<?php echo $hospitalmodels->hospital_id;?>"/>
