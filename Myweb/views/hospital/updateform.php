@@ -9,7 +9,7 @@
     <label>หมายเลขโทรศัพท์ <input type="text" name="phone_H"
         value="<?php echo  $hospitalmodels->phone_H;?>"/> </label><br>
 
-    <label>ที่อยู่ <input type="text" name="address_H"
+    <label>ที่อยู่โรงพยาบาล <input type="text" name="address_H"
         value="<?php echo  $hospitalmodels->address_H;?>"/> </label><br>
         
     <label>เขต <input type="text" name="county_H"
