@@ -8,18 +8,18 @@
         </select></label><br>
 
 
-    <label>ชื่อ<select name="id_card">
+    <label>ชื่อผู้ป่วย<select name="id_card">
         <option value="">choose</option>
         <?php foreach($peoplemodellist7 as $namep){
             echo "<option value=$namep->id_card>$namep->NamePeople $namep->LastnameP</option>";
         }?>
         </select></label><br>
 
-    <label>ที่อยู่<input type="text" name="address_Home"/> </label><br>
+    <label>ที่อยู่ผู้ป่วย<input type="text" name="address_Home"/> </label><br>
     <label>เขต<input type="text" name="county_Home"/> </label><br>
     <label>จังหวัด<input type="text" name="province_Home"/> </label><br>
 
-    <label>สี<select name="color_name">
+    <label>สีของอาการ<select name="color_name">
         <option value="">choose</option>
         <?php foreach($colormodellist6 as $newcolor){
             echo "<option value=$newcolor->color_name>$newcolor->color_name</option>";
@@ -33,14 +33,14 @@
         }?>
         </select></label><br>
 
-    <label>แพทย์อาสา<select name="doctor_id">
+    <label>ชื่อแพทย์อาสาที่ดูแล<select name="doctor_id">
         <option value="">choose</option>
         <?php foreach($doctormodellist3 as $newdoctor){
             echo "<option value=$newdoctor->doctor_id>$newdoctor->name_D</option>";
         }?>
         </select></label><br>
 
-    <label>โรงพยาบาล<select name="hospital_id">
+    <label>ชื่อโรงพยาบาลที่ดูแล<select name="hospital_id">
         <option value="">choose</option>
         <?php foreach($hospitalmodellist2 as $newhospital){
             echo "<option value=$newhospital->hospital_id>$newhospital->name_H</option>";
