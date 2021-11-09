@@ -9,6 +9,8 @@ Search</button>
 </body></form></html>
 <table border = 3>
 <tr> <td>IDcard</td>
+<td>Name</td>
+<td>Lastname</td>
 <td>Address</td>
 <td>County</td>
 <td>Province</td>
@@ -20,6 +22,8 @@ Search</button>
 <?php foreach( $homeisolationmodellist as  $homelist)
 {
     echo "<tr> <td>$homelist->id_card</td>
+    <td>$homelist->NamePeople</td>
+    <td>$homelist->LastnameP</td>
     <td>$homelist->address_Home</td>
     <td>$homelist->county_Home</td> 
     <td>$homelist->province_Home</td>  
