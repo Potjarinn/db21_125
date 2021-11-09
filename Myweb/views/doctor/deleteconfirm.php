@@ -1,8 +1,8 @@
 <?php echo "<br>Are you sure to delete this Doctor? <br>
-            <br>  doctor_id:$doctormodels->doctor_id  
-            <br>name:$doctormodels->name_D  
-            <br>phone:$doctormodels->phone_D  
-            <br>hospital:$doctormodels->name_H<br>";?>
+            <br>  Doctor_id:$doctormodels->doctor_id  
+            <br>Name:$doctormodels->name_D  
+            <br>Phone:$doctormodels->phone_D  
+            <br>Hospital:$doctormodels->name_H<br>";?>
 <form method="get" action="">
     <input type="hidden" name="controller" value="doctor"/>
     <input type="hidden" name="doctorid" value="<?php echo $doctormodels->doctor_id;?>"/>
