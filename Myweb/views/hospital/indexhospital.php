@@ -7,12 +7,12 @@
 Search</button>
 </body></form></html>
 <table border = 3>
-<tr> <td>Hospital_id</td>
-<td>Name</td>
-<td>Phone</td>
-<td>Address</td>
-<td>County</td>
-<td>Province</td>
+<tr> <td>รหัสโรงพยาบาล</td>
+<td>ชื่อโรงพยาบาล</td>
+<td>หมายเลขโทรศัพท์</td>
+<td>ที่อยู่</td>
+<td>เขต</td>
+<td>จังหวัด</td>
 <td>Update</td><td>Delete</td> </tr>
 <?php foreach( $hospitalmodellist as  $hospitallist)
 {
