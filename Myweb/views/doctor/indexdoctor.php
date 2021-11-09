@@ -1,5 +1,4 @@
-<br>
-พจรินทร์ ประเสริฐศรี 6220503309
+
 <br>new Doctor <a href=?controller=doctor&action=newdoctor>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
@@ -8,11 +7,11 @@
 Search</button>
 </body></form></html>
 <table border = 3>
-<tr> <td>doctor_id</td>
-<td>name</td>
-<td>phone</td>
-<td>hospital</td>
-<td>update</td><td>delete</td> </tr>
+<tr> <td>Doctor_id</td>
+<td>Name</td>
+<td>Phone</td>
+<td>Hospital</td>
+<td>Update</td><td>Delete</td> </tr>
 <?php foreach( $doctormodellist as  $doctorlist)
 {
     echo "<tr> <td>$doctorlist->doctor_id</td>
