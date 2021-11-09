@@ -9,6 +9,7 @@ class homeisolation
 
     public function newhomeisolation()
     {
+    
         $homeisolationmodellist1 = homeisolationModels::getAll();
         $hospitalmodellist2 = hospitalModels::getAll();
         $doctormodellist3 = doctorModels::getAll();
@@ -60,7 +61,6 @@ class homeisolation
         $doctor_id = $_GET['doctor_id'];
         $hospital_id = $_GET['hospital_id'];
         $patientid = $_GET['patientid'];
-        echo $address_Home;
         homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid);
         homeisolation::index();
      }
