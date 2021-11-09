@@ -1,5 +1,4 @@
-<br>
-พจรินทร์ ประเสริฐศรี 6220503309
+
 <br>new Homeisolation <a href=?controller=homeisolation&action=newhomeisolation>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
@@ -18,7 +17,7 @@ Search</button>
 <td>IDatk</td>
 <td>Doctor</td>
 <td>Hospital</td>
-<td>update</td><td>delete</td> </tr>
+<td>Update</td><td>Delete</td> </tr>
 <?php foreach( $homeisolationmodellist as  $homelist)
 {
     echo "<tr> <td>$homelist->id_card</td>
