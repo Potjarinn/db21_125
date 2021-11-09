@@ -10,7 +10,7 @@
         }?>
         </select></label><br>  
 
-    <label>ชื่อ <select name="id_card">
+    <label>ชื่อผู้ป่วย <select name="id_card">
         <?php foreach($peoplemodellist as $namep){
             echo "<option value=$namep->id_card";
             if($namep->id_card==$homeisolationmodels->id_card){
@@ -20,7 +20,7 @@
         }?>
         </select></label><br> 
 
-    <label>ที่อยู่ <input type="text" name="address_Home"
+    <label>ที่อยู่ผู้ป่วย <input type="text" name="address_Home"
         value="<?php echo  $homeisolationmodels->address_Home;?>"/> </label><br>
 
     <label>เขต <input type="text" name="county_Home"
@@ -29,7 +29,7 @@
     <label>จังหวัด <input type="text" name="province_Home"
         value="<?php echo  $homeisolationmodels->province_Home;?>"/> </label><br>
 
-    <label>สี <select name="color_name">
+    <label>สีของอาการ <select name="color_name">
         <?php foreach($colormodellist as $color){
             echo "<option value=$color->color_name";
             if($color->color_name==$homeisolationmodels->color_name){
@@ -49,7 +49,7 @@
         }?>
         </select></label><br> 
         
-    <label>แพทย์อาสา <select name="doctor_id">
+    <label>ชื่อแพทย์อาสาที่ดูแล <select name="doctor_id">
         <?php foreach($doctormodellist as $doctor){
             echo "<option value=$doctor->doctor_id";
             if($doctor->doctor_id==$homeisolationmodels->doctor_id){
@@ -59,7 +59,7 @@
         }?>
         </select></label><br>    
 
-    <label>โรงพยาบาล <select name="hospital_id">
+    <label>ชื่อโรงพยาบาลที่ดูแล <select name="hospital_id">
         <?php foreach($hospitalmodellist as $hospital){
             echo "<option value=$hospital->hospital_id";
             if($hospital->hospital_id==$homeisolationmodels->hospital_id){
