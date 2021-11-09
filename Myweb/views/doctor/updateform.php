@@ -9,7 +9,7 @@
     <label>หมายเลขโทรศัพท์ <input type="text" name="phone_D"
         value="<?php echo  $doctormodels->phone_D;?>"/> </label><br>
 
-    <label>โรงพยาบาล <select name="hospital_id">
+    <label>สังกัดโรงพยาบาล <select name="hospital_id">
         <?php foreach($hospitalmodellist as $hospital){
             echo "<option value=$hospital->hospital_id";
             if($hospital->hospital_id==$doctormodels->hospital_id){
