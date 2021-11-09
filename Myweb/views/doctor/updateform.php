@@ -1,15 +1,15 @@
 <form method="get" action="">
 
-    <label>Doctor_id <input type="text" name="doctor_id"
+    <label>รหัสแพทย์อาสา <input type="text" name="doctor_id"
         value="<?php echo  $doctormodels->doctor_id;?>"/> </label><br>
 
-    <label>Name <input type="text" name="name_D"
+    <label>ชื่อแพทย์อาสา <input type="text" name="name_D"
         value="<?php echo  $doctormodels->name_D;?>"/> </label><br>
 
-    <label>Phone <input type="text" name="phone_D"
+    <label>หมายเลขโทรศัพท์ <input type="text" name="phone_D"
         value="<?php echo  $doctormodels->phone_D;?>"/> </label><br>
 
-    <label>Hospital <select name="hospital_id">
+    <label>โรงพยาบาล <select name="hospital_id">
         <?php foreach($hospitalmodellist as $hospital){
             echo "<option value=$hospital->hospital_id";
             if($hospital->hospital_id==$doctormodels->hospital_id){
