@@ -1,10 +1,10 @@
 <?php echo "<br>Are you sure to delete this Homeisolation? <br>
             <br>IDcard:$homeisolationmodels->id_card  
-            <br>Address:$homeisolationmodels->NamePeople
-            <br>Address:$homeisolationmodels->LastnameP
+            <br>Name:$homeisolationmodels->NamePeople
+            <br>Lastname:$homeisolationmodels->LastnameP
             <br>Address:$homeisolationmodels->address_Home
-            <br>Address:$homeisolationmodels->county_Home  
-            <br>Address:$homeisolationmodels->province_Home    
+            <br>County:$homeisolationmodels->county_Home  
+            <br>Province:$homeisolationmodels->province_Home    
             <br>Color:$homeisolationmodels->color_name 
             <br>IDatk:$homeisolationmodels->id_atk  
             <br>Doctor:$homeisolationmodels->name_D 
