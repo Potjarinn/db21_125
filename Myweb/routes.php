@@ -7,7 +7,8 @@ $controllers = array('home'=>['home','error'],
 function call($controller,$action){
     require_once("controllers/".$controller."_controller.php");
     switch($controller){
-        case "home": $controller = new HomeController();break;
+        case "home": require_once("models/homeisolationmodels.php");
+            $controller = new HomeController();break;
         case "hospital": require_once("models/hospitalmodels.php");
             $controller = new hospital();break;
         case "doctor": require_once("models/doctormodels.php");
@@ -19,6 +20,7 @@ function call($controller,$action){
                             require_once("models/patienmodels.php");
                             require_once("models/atkmodels.php");
                             require_once("models/colormodels.php");
+                            require_once("models/peoplemodels.php");
             $controller = new homeisolation();break;
     }
     $controller->{$action}();
