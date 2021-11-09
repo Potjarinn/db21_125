@@ -10,11 +10,15 @@
         }?>
         </select></label><br>  
 
-    <label>Name <input type="text" name="NamePeople"
-        value="<?php echo  $homeisolationmodels->NamePeople;?>"/> </label><br>
-
-    <label>Lastname <input type="text" name="LastnameP"
-        value="<?php echo  $homeisolationmodels->LastnameP;?>"/> </label><br>
+    <label>Name <select name="id_card">
+        <?php foreach($peoplemodellist as $namep){
+            echo "<option value=$namep->id_card";
+            if($namep->id_card==$homeisolationmodels->id_card){
+                echo " selected='selected'";
+            }
+            echo ">$namep->NamePeople $namep->LastnameP</option>";
+        }?>
+        </select></label><br> 
 
     <label>Address <input type="text" name="address_Home"
         value="<?php echo  $homeisolationmodels->address_Home;?>"/> </label><br>
