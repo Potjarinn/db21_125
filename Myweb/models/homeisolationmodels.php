@@ -13,8 +13,9 @@ class homeisolationModels{
     public $name_H;
     public $doctor_id;
     public $hospital_id;
+    public $status_show;
    
-    public function __construct($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id)
+    public function __construct($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id,$status_show)
     {
         $this->patient_id = $patient_id;
         $this->id_card = $id_card;
@@ -29,19 +30,20 @@ class homeisolationModels{
         $this->name_H = $name_H;
         $this->doctor_id = $doctor_id;
         $this->hospital_id = $hospital_id;
+        $this->status_show = $status_show;
     }
 
     public static function get($patient_id)
     {
         
         require("connection_connect.php");
-        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id
+        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id, p.status_show
         FROM People INNER JOIN (SELECT d.patient_id, d.id_card, d.address_Home, d.county_Home, d.province_Home, d.color_name, 
-                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id
+                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id, d.status_show
                 FROM Hospital INNER JOIN (SELECT p.patient_id, p.id_card, p.address_Home, p.county_Home, 
-                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id
+                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id, p.status_show
                 FROM Doctor INNER JOIN (SELECT Patient.patient_id, Patient.id_card, Patient.color_name,Patient.id_atk,Homeisolation.address_Home, 
-                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id     
+                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id,Homeisolation.status_show   
                 FROM Homeisolation INNER JOIN Patient ON Homeisolation.patient_id = Patient.patient_id) AS p ON Doctor.doctor_id = p.doctor_id) AS d 
                 ON d.hospital_id = Hospital.hospital_id) AS p ON People.id_card = p.id_card WHERE patient_id = '$patient_id'";
         $result = $conn->query($sql);
@@ -59,22 +61,23 @@ class homeisolationModels{
         $name_H = $my_row[name_H];
         $doctor_id = $my_row[doctor_id];
         $hospital_id = $my_row[hospital_id];
+        $status_show = $my_row[status_show];
         require("connection_close.php");
 
-        return new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id);
+        return new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id,$status_show);
     }
 
     public static function getAll()
     {
         $homeisolationmodelList  = [];
         require("connection_connect.php");
-        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id
+        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id, p.status_show
         FROM People INNER JOIN (SELECT d.patient_id, d.id_card, d.address_Home, d.county_Home, d.province_Home, d.color_name, 
-                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id
+                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id, d.status_show
                 FROM Hospital INNER JOIN (SELECT p.patient_id, p.id_card, p.address_Home, p.county_Home, 
-                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id
+                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id, p.status_show
                 FROM Doctor INNER JOIN (SELECT Patient.patient_id, Patient.id_card, Patient.color_name,Patient.id_atk,Homeisolation.address_Home, 
-                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id     
+                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id,Homeisolation.status_show   
                 FROM Homeisolation INNER JOIN Patient ON Homeisolation.patient_id = Patient.patient_id) AS p ON Doctor.doctor_id = p.doctor_id) AS d 
                 ON d.hospital_id = Hospital.hospital_id) AS p ON People.id_card = p.id_card";
         $result = $conn->query($sql);
@@ -93,29 +96,28 @@ class homeisolationModels{
             $name_H = $my_row[name_H];
             $doctor_id = $my_row[doctor_id];
             $hospital_id = $my_row[hospital_id];
-            $homeisolationmodelList[] = new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id);
+            $status_show = $my_row[status_show];
+            $homeisolationmodelList[] = new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id,$status_show);
         }
         require("connection_close.php");
 
         return $homeisolationmodelList;
     }
 
-    public static function search($key)
+    public static function getAllshow()
     {
         $homeisolationmodelList  = [];
         require("connection_connect.php");
-        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id
+        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id, p.status_show
         FROM People INNER JOIN (SELECT d.patient_id, d.id_card, d.address_Home, d.county_Home, d.province_Home, d.color_name, 
-                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id
+                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id, d.status_show
                 FROM Hospital INNER JOIN (SELECT p.patient_id, p.id_card, p.address_Home, p.county_Home, 
-                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id
+                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id, p.status_show
                 FROM Doctor INNER JOIN (SELECT Patient.patient_id, Patient.id_card, Patient.color_name,Patient.id_atk,Homeisolation.address_Home, 
-                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id     
+                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id,Homeisolation.status_show   
                 FROM Homeisolation INNER JOIN Patient ON Homeisolation.patient_id = Patient.patient_id) AS p ON Doctor.doctor_id = p.doctor_id) AS d 
                 ON d.hospital_id = Hospital.hospital_id) AS p ON People.id_card = p.id_card
-        where (p.patient_id like '%$key%' or p.id_card like '%$key%' or People.NamePeople like '%$key%' or People.LastnameP like '%$key%' or 
-        p.address_Home like '%$key%' or p.county_Home like '%$key%' or p.province_Home like '%$key%' or p.color_name like '%$key%' or p.id_atk like '%$key%' or 
-        p.name_D like '%$key%' or p.name_H like '%$key%'or p.doctor_id like '%$key%' or p.hospital_id like '%$key%')";
+                WHERE p.status_show = 1 ";
         $result = $conn->query($sql);
         while($my_row = $result->fetch_assoc())
         {
@@ -132,7 +134,48 @@ class homeisolationModels{
             $name_H = $my_row[name_H];
             $doctor_id = $my_row[doctor_id];
             $hospital_id = $my_row[hospital_id];
-            $homeisolationmodelList[] = new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id);
+            $status_show = $my_row[status_show];
+            $homeisolationmodelList[] = new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id,$status_show);
+        }
+        require("connection_close.php");
+
+        return $homeisolationmodelList;
+    }
+
+    public static function search($key)
+    {
+        $homeisolationmodelList  = [];
+        require("connection_connect.php");
+        $sql = "SELECT p.patient_id, p.id_card, People.NamePeople, People.LastnameP, p.address_Home, p.county_Home, p.province_Home, p.color_name, p.id_atk, p.name_D, p.name_H, p.hospital_id, p.doctor_id, p.status_show
+        FROM People INNER JOIN (SELECT d.patient_id, d.id_card, d.address_Home, d.county_Home, d.province_Home, d.color_name, 
+                d.id_atk, d.name_D, Hospital.name_H,Hospital.hospital_id, d.doctor_id, d.status_show
+                FROM Hospital INNER JOIN (SELECT p.patient_id, p.id_card, p.address_Home, p.county_Home, 
+                p.province_Home, p.color_name, p.id_atk, Doctor.doctor_id, Doctor.name_D, p.hospital_id, p.status_show
+                FROM Doctor INNER JOIN (SELECT Patient.patient_id, Patient.id_card, Patient.color_name,Patient.id_atk,Homeisolation.address_Home, 
+                Homeisolation.county_Home,Homeisolation.province_Home, Homeisolation.doctor_id,Homeisolation.hospital_id,Homeisolation.status_show   
+                FROM Homeisolation INNER JOIN Patient ON Homeisolation.patient_id = Patient.patient_id) AS p ON Doctor.doctor_id = p.doctor_id) AS d 
+                ON d.hospital_id = Hospital.hospital_id) AS p ON People.id_card = p.id_card
+        where (p.patient_id like '%$key%' or p.id_card like '%$key%' or People.NamePeople like '%$key%' or People.LastnameP like '%$key%' or 
+        p.address_Home like '%$key%' or p.county_Home like '%$key%' or p.province_Home like '%$key%' or p.color_name like '%$key%' or p.id_atk like '%$key%' or 
+        p.name_D like '%$key%' or p.name_H like '%$key%'or p.doctor_id like '%$key%' or p.hospital_id like '%$key%' or p.status_show like '%$key%')";
+        $result = $conn->query($sql);
+        while($my_row = $result->fetch_assoc())
+        {
+            $patient_id = $my_row[patient_id];
+            $id_card = $my_row[id_card];
+            $NamePeople = $my_row[NamePeople];
+            $LastnameP = $my_row[LastnameP];
+            $address_Home = $my_row[address_Home];
+            $county_Home = $my_row[county_Home];
+            $province_Home = $my_row[province_Home];
+            $color_name = $my_row[color_name];
+            $id_atk = $my_row[id_atk];
+            $name_D = $my_row[name_D];
+            $name_H = $my_row[name_H];
+            $doctor_id = $my_row[doctor_id];
+            $hospital_id = $my_row[hospital_id];
+            $status_show = $my_row[status_show];
+            $homeisolationmodelList[] = new homeisolationModels($patient_id,$id_card,$NamePeople,$LastnameP,$address_Home,$county_Home,$province_Home,$color_name,$id_atk,$name_D,$name_H,$doctor_id,$hospital_id,$status_show);
         }
         require("connection_close.php");
         return $homeisolationmodelList;
@@ -142,10 +185,10 @@ class homeisolationModels{
 
     public static function Add($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id)
     {
-        
+       
         require("connection_connect.php");
-        $sql = "INSERT INTO `Homeisolation`(`patient_id`, `address_Home`, `county_Home`, `province_Home`, `doctor_id`, `hospital_id`) 
-        VALUES ('$patient_id','$address_Home','$county_Home','$province_Home','$doctor_id','$hospital_id')";
+        $sql = "INSERT INTO `Homeisolation`(`patient_id`, `address_Home`, `county_Home`, `province_Home`, `doctor_id`, `hospital_id`, `status_show`) 
+        VALUES ('$patient_id','$address_Home','$county_Home','$province_Home','$doctor_id','$hospital_id','1')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return ;
@@ -167,7 +210,8 @@ class homeisolationModels{
     public static function delete($patient_id)
     {
         require("connection_connect.php");
-        $sql = "DELETE FROM `Homeisolation` WHERE patient_id = '$patient_id'";
+        $sql = "UPDATE Homeisolation SET Homeisolation.status_show = '0' WHERE Homeisolation.patient_id = '$patient_id'";
+       // $sql = "DELETE FROM `Homeisolation` WHERE patient_id = '$patient_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "delete success $result row";
