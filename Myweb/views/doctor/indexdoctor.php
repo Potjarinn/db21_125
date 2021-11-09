@@ -6,11 +6,11 @@
     <button type="submit" name="action" value="search">
 Search</button>
 </body></form></html>
-<table border = 3>
+<table border = 1>
 <tr> <td>รหัสแพทย์อาสา</td>
 <td>ชื่อแพทย์อาสา</td>
 <td>หมายเลขโทรศัพท์</td>
-<td>โรงพยาบาล</td>
+<td>สังกัดโรงพยาบาล</td>
 <td>Update</td><td>Delete</td> </tr>
 <?php foreach( $doctormodellist as  $doctorlist)
 {
