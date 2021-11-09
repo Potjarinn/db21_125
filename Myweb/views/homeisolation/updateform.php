@@ -10,6 +10,12 @@
         }?>
         </select></label><br>  
 
+    <label>Name <input type="text" name="NamePeople"
+        value="<?php echo  $homeisolationmodels->NamePeople;?>"/> </label><br>
+
+    <label>Lastname <input type="text" name="LastnameP"
+        value="<?php echo  $homeisolationmodels->LastnameP;?>"/> </label><br>
+
     <label>Address <input type="text" name="address_Home"
         value="<?php echo  $homeisolationmodels->address_Home;?>"/> </label><br>
 
@@ -41,7 +47,7 @@
         
     <label>Doctor <select name="doctor_id">
         <?php foreach($doctormodellist as $doctor){
-            echo "<option value=$doctor->hospital_id";
+            echo "<option value=$doctor->doctor_id";
             if($doctor->doctor_id==$homeisolationmodels->doctor_id){
                 echo " selected='selected'";
             }
