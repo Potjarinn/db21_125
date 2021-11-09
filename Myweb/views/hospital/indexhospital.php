@@ -6,11 +6,11 @@
     <button type="submit" name="action" value="search">
 Search</button>
 </body></form></html>
-<table border = 3>
+<table border = 1>
 <tr> <td>รหัสโรงพยาบาล</td>
 <td>ชื่อโรงพยาบาล</td>
 <td>หมายเลขโทรศัพท์</td>
-<td>ที่อยู่</td>
+<td>ที่อยู่โรงพยาบาล</td>
 <td>เขต</td>
 <td>จังหวัด</td>
 <td>Update</td><td>Delete</td> </tr>
