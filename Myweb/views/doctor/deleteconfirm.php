@@ -1,4 +1,4 @@
-<?php echo "<br>Are you sure to delete this student <br>
+<?php echo "<br>Are you sure to delete this Doctor? <br>
             <br>  doctor_id:$doctormodels->doctor_id  
             <br>name:$doctormodels->name_D  
             <br>phone:$doctormodels->phone_D  
