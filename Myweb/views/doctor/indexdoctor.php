@@ -7,10 +7,10 @@
 Search</button>
 </body></form></html>
 <table border = 3>
-<tr> <td>Doctor_id</td>
-<td>Name</td>
-<td>Phone</td>
-<td>Hospital</td>
+<tr> <td>รหัสแพทย์อาสา</td>
+<td>ชื่อแพทย์อาสา</td>
+<td>หมายเลขโทรศัพท์</td>
+<td>โรงพยาบาล</td>
 <td>Update</td><td>Delete</td> </tr>
 <?php foreach( $doctormodellist as  $doctorlist)
 {
