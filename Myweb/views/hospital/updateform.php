@@ -1,22 +1,22 @@
 <form method="get" action="">
 
-    <label>Name <input type="text" name="name_H"
+    <label>รหัสโรงพยาบาล <input type="text" name="hospital_id"
+        value="<?php echo  $hospitalmodels->hospital_id;?>"/> </label><br>
+
+    <label>ชื่อโรงพยาบาล <input type="text" name="name_H"
         value="<?php echo  $hospitalmodels->name_H;?>"/> </label><br>
 
-    <label>Phone <input type="text" name="phone_H"
+    <label>หมายเลขโทรศัพท์ <input type="text" name="phone_H"
         value="<?php echo  $hospitalmodels->phone_H;?>"/> </label><br>
 
-    <label>Address <input type="text" name="address_H"
+    <label>ที่อยู่ <input type="text" name="address_H"
         value="<?php echo  $hospitalmodels->address_H;?>"/> </label><br>
         
-    <label>County <input type="text" name="county_H"
+    <label>เขต <input type="text" name="county_H"
         value="<?php echo  $hospitalmodels->county_H;?>"/> </label><br>
 
-    <label>Province <input type="text" name="province_H"
+    <label>จังหวัด <input type="text" name="province_H"
         value="<?php echo  $hospitalmodels->province_H;?>"/> </label><br>
-
-    <label>Hospital_id <input type="text" name="hospital_id"
-        value="<?php echo  $hospitalmodels->hospital_id;?>"/> </label><br>
        
     <input type="hidden" name="controller" value="hospital"/>
     <input type="hidden" name="hospitalid" value="<?php echo $hospitalmodels->hospital_id;?>"/>
