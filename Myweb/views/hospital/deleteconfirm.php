@@ -2,7 +2,7 @@
             <br>  รหัสโรงพยาบาล:$hospitalmodels->hospital_id  
             <br>ชื่อโรงพยาบาล:$hospitalmodels->name_H  
             <br>หมายเลขโทรศัพท์:$hospitalmodels->phone_H 
-            <br>ที่อยู่:$hospitalmodels->address_H  
+            <br>ที่อยู่โรงพยาบาล:$hospitalmodels->address_H  
             <br>เขต:$hospitalmodels->county_H 
             <br>จังหวัด:$hospitalmodels->province_H<br>";?>
 <form method="get" action="">
