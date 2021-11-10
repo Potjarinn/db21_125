@@ -16,7 +16,7 @@ class homeisolation
         $doctormodellist3 = doctorModels::getAll();
         $patienmodellist4 = patienModels::getAll();
         $atkmodellist5 = atkModels::getAll();
-        $colormodellist6 = colorModels::getAll();
+        //$colormodellist6 = colorModels::getAll();
         $peoplemodellist7 = peopleModels::getAll();
         require_once('views/homeisolation/newhomeisolation.php');
     }
@@ -29,7 +29,8 @@ class homeisolation
         $province_Home = $_GET['province_Home'];
         $doctor_id = $_GET['doctor_id'];
         $hospital_id = $_GET['hospital_id'];
-        homeisolationModels::Add($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id);
+        $initial_symptoms = $_GET['initial_symptoms'];
+        homeisolationModels::Add($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$initial_symptoms);
         homeisolation::index();
      }
 
@@ -49,7 +50,7 @@ class homeisolation
          $patienmodellist = patienModels::getAll();
          $doctormodellist = doctorModels::getAll();
          $atkmodellist = atkModels::getAll();
-         $colormodellist = colorModels::getAll();
+         //$colormodellist = colorModels::getAll();
          $peoplemodellist = peopleModels::getAll();
 
          require_once('views/homeisolation/updateform.php');
@@ -65,7 +66,8 @@ class homeisolation
         $hospital_id = $_GET['hospital_id'];
         $patientid = $_GET['patientid'];
         $status_show = $_GET['status_show'];
-        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid,$status_show);
+        $initial_symptoms = $_GET['initial_symptoms'];
+        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid,$status_show,$initial_symptoms);
         homeisolation::index();
      }
 
