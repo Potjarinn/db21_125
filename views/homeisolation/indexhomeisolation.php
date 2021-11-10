@@ -12,7 +12,7 @@ Search</button>
 <td><b>ที่อยู่ผู้ป่วย</td>
 <td><b>เขต</td>
 <td><b>จังหวัด</td>
-<td><b>สีของอาการ</td>
+<td><b>อาการเบื้องต้น</td>
 <td><b>รหัสATK</td>
 <td><b>ชื่อแพทย์อาสาที่ดูแล</td>
 <td><b>ชื่อโรงพยาบาลที่ดูแล</td>
@@ -24,7 +24,7 @@ Search</button>
     <td>$homelist->address_Home</td>
     <td>$homelist->county_Home</td> 
     <td>$homelist->province_Home</td>  
-    <td>$homelist->color_name</td> 
+    <td>$homelist->initial_symptoms</td> 
     <td>$homelist->id_atk</td> 
     <td>$homelist->name_D</td> 
     <td>$homelist->name_H</td> 
