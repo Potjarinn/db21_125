@@ -1,6 +1,6 @@
 <form method="get" action="">
         
-    <label>เลขบัตรประชาชน <select name="patient_id">
+    <br><br><label>เลขบัตรประชาชน <select name="patient_id">
         <?php foreach($patienmodellist as $patien){
             echo "<option value=$patien->patient_id";
             if($patien->patient_id==$homeisolationmodels->patient_id){
