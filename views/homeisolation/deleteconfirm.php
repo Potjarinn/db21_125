@@ -1,4 +1,4 @@
-<?php echo "<br>Are you sure to delete this Homeisolation? <br>
+<?php echo "<br><br>Are you sure to delete this Homeisolation? <br>
             <br>เลขบัตรประชาชน:$homeisolationmodels->id_card  
             <br>ชื่อผู้ป่วย:$homeisolationmodels->NamePeople $homeisolationmodels->LastnameP
             <br>ที่อยู่ผู้ป่วย:$homeisolationmodels->address_Home
