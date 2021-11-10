@@ -1,4 +1,3 @@
-
 <br><br>new Homeisolation <a href=?controller=homeisolation&action=newhomeisolation>Click</a><br>
 <form method="get" action="">
     <input type="text" name="key">
