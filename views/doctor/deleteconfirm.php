@@ -1,4 +1,4 @@
-<?php echo "<br>Are you sure to delete this Doctor? <br>
+<?php echo "<br><br>Are you sure to delete this Doctor? <br>
             <br>  รหัสแพทย์อาสา:$doctormodels->doctor_id  
             <br>ชื่อแพทย์อาสา:$doctormodels->name_D  
             <br>หมายเลขโทรศัพท์:$doctormodels->phone_D  
