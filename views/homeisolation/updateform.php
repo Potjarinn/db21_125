@@ -31,16 +31,10 @@
 
     <label>อาการเบื้องต้น <input type="text" name="initial_symptoms"
         value="<?php echo  $homeisolationmodels->initial_symptoms;?>"/> </label><br>
+
+    <label>รหัสATK <input type="text" name="id_atk"
+        value="<?php echo  $homeisolationmodels->id_atk;?>"/> </label><br>
     
-    <label>รหัสATK <select name="id_atk">
-        <?php foreach($atkmodellist as $atk){
-            echo "<option value=$atk->id_atk";
-            if($atk->id_atk==$homeisolationmodels->id_atk){
-                echo " selected='selected'";
-            }
-            echo ">$atk->id_atk</option>";
-        }?>
-        </select></label><br> 
         
     <label>ชื่อแพทย์อาสาที่ดูแล <select name="doctor_id">
         <?php foreach($doctormodellist as $doctor){
