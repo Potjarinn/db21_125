@@ -10,15 +10,11 @@
         }?>
         </select></label><br>  
 
-    <label>ชื่อผู้ป่วย <select name="id_card">
-        <?php foreach($peoplemodellist as $namep){
-            echo "<option value=$namep->id_card";
-            if($namep->id_card==$homeisolationmodels->id_card){
-                echo " selected='selected'";
-            }
-            echo ">$namep->NamePeople $namep->LastnameP</option>";
-        }?>
-        </select></label><br> 
+    <label>ชื่อผู้ป่วย <input type="text" name="id_card"
+        value="<?php echo  $homeisolationmodels->NamePeople;?>"/> </label><br>
+
+    <label>นามสกุลผู้ป่วย <input type="text" name="id_card"
+        value="<?php echo  $homeisolationmodels->LastnameP;?>"/> </label><br>
 
     <label>ที่อยู่ผู้ป่วย <input type="text" name="address_Home"
         value="<?php echo  $homeisolationmodels->address_Home;?>"/> </label><br>
