@@ -20,12 +20,6 @@
     <label>จังหวัด<input type="text" name="province_Home"/> </label><br>
     <label>อาการเบื้องต้น<input type="text" name="initial_symptoms"/> </label><br>
     
-    <label>รหัสATK<select name="id_atk">
-        <option value="">choose</option>
-        <?php foreach($atkmodellist5 as $newatk){
-            echo "<option value=$newatk->id_atk>$newatk->id_atk</option>";
-        }?>
-        </select></label><br>
 
     <label>ชื่อแพทย์อาสาที่ดูแล<select name="doctor_id">
         <option value="">choose</option>
