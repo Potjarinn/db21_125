@@ -197,7 +197,7 @@ class homeisolationModels{
 
     public static function Add($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$initial_symptoms)
     {
-       
+        
         require("connection_connect.php");
         $sql = "INSERT INTO `Homeisolation`(`patient_id`, `address_Home`, `county_Home`, `province_Home`, `doctor_id`, `hospital_id`, `status_show`, `initial_symptoms`) 
         VALUES ('$patient_id','$address_Home','$county_Home','$province_Home','$doctor_id','$hospital_id','1','$initial_symptoms')";
@@ -209,6 +209,7 @@ class homeisolationModels{
 
     public static function update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid,$initial_symptoms)
     {
+        
     
         require("connection_connect.php");
         $sql = "UPDATE Homeisolation
