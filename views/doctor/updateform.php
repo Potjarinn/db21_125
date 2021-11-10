@@ -1,6 +1,6 @@
 <form method="get" action="">
 
-    <label>รหัสแพทย์อาสา <input type="text" name="doctor_id"
+    <br><br><label>รหัสแพทย์อาสา <input type="text" name="doctor_id"
         value="<?php echo  $doctormodels->doctor_id;?>"/> </label><br>
 
     <label>ชื่อแพทย์อาสา <input type="text" name="name_D"
