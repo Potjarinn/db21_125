@@ -1,4 +1,4 @@
-<?php echo "<br>Are you sure to delete this Hospital? <br>
+<?php echo "<br><br>Are you sure to delete this Hospital? <br>
             <br>  รหัสโรงพยาบาล:$hospitalmodels->hospital_id  
             <br>ชื่อโรงพยาบาล:$hospitalmodels->name_H  
             <br>หมายเลขโทรศัพท์:$hospitalmodels->phone_H 
