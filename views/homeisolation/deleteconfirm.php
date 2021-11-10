@@ -4,7 +4,7 @@
             <br>ที่อยู่ผู้ป่วย:$homeisolationmodels->address_Home
             <br>เขต:$homeisolationmodels->county_Home  
             <br>จังหวัด:$homeisolationmodels->province_Home    
-            <br>สีของอาการ:$homeisolationmodels->color_name 
+            <br>อาการเบื้อต้น:$homeisolationmodels->initial_symptoms 
             <br>รหัสATK:$homeisolationmodels->id_atk  
             <br>ชื่อแพทย์อาสาที่ดูแล:$homeisolationmodels->name_D 
             <br>ชื่อโรงพยาบาลที่ดูแล:$homeisolationmodels->name_D<br>";?>
