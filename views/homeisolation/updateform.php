@@ -29,15 +29,8 @@
     <label>จังหวัด <input type="text" name="province_Home"
         value="<?php echo  $homeisolationmodels->province_Home;?>"/> </label><br>
 
-    <label>สีของอาการ <select name="color_name">
-        <?php foreach($colormodellist as $color){
-            echo "<option value=$color->color_name";
-            if($color->color_name==$homeisolationmodels->color_name){
-                echo " selected='selected'";
-            }
-            echo ">$color->color_name</option>";
-        }?>
-        </select></label><br> 
+    <label>อาการเบื้องต้น <input type="text" name="initial_symptoms"
+        value="<?php echo  $homeisolationmodels->initial_symptoms;?>"/> </label><br>
     
     <label>รหัสATK <select name="id_atk">
         <?php foreach($atkmodellist as $atk){
