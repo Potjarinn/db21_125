@@ -10,7 +10,7 @@ class homeisolation
 
     public function newhomeisolation()
     {
-    
+        
         $homeisolationmodellist1 = homeisolationModels::getAll();
         $hospitalmodellist2 = hospitalModels::getAll();
         $doctormodellist3 = doctorModels::getAll();
@@ -23,6 +23,7 @@ class homeisolation
 
     public function addhomeisolation()
     {
+       
         $patient_id = $_GET['patient_id'];
         $address_Home = $_GET['address_Home'];
         $county_Home = $_GET['county_Home'];
@@ -67,7 +68,7 @@ class homeisolation
         $patientid = $_GET['patientid'];
         $status_show = $_GET['status_show'];
         $initial_symptoms = $_GET['initial_symptoms'];
-        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid,$status_show,$initial_symptoms);
+        homeisolationModels::update($patient_id,$address_Home,$county_Home,$province_Home,$doctor_id,$hospital_id,$patientid,$initial_symptoms);
         homeisolation::index();
      }
 
