@@ -7,7 +7,7 @@
             <br>อาการเบื้อต้น:$homeisolationmodels->initial_symptoms 
             <br>รหัสATK:$homeisolationmodels->id_atk  
             <br>ชื่อแพทย์อาสาที่ดูแล:$homeisolationmodels->name_D 
-            <br>ชื่อโรงพยาบาลที่ดูแล:$homeisolationmodels->name_D<br>";?>
+            <br>ชื่อโรงพยาบาลที่ดูแล:$homeisolationmodels->name_H<br>";?>
 <form method="get" action="">
     <input type="hidden" name="controller" value="homeisolation"/>
     <input type="hidden" name="patientid" value="<?php echo $homeisolationmodels->patient_id;?>"/>
