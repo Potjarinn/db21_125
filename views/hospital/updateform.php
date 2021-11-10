@@ -1,6 +1,6 @@
 <form method="get" action="">
 
-    <label>รหัสโรงพยาบาล <input type="text" name="hospital_id"
+    <br><br><label>รหัสโรงพยาบาล <input type="text" name="hospital_id"
         value="<?php echo  $hospitalmodels->hospital_id;?>"/> </label><br>
 
     <label>ชื่อโรงพยาบาล <input type="text" name="name_H"
