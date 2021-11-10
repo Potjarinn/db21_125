@@ -18,13 +18,7 @@
     <label>ที่อยู่ผู้ป่วย<input type="text" name="address_Home"/> </label><br>
     <label>เขต<input type="text" name="county_Home"/> </label><br>
     <label>จังหวัด<input type="text" name="province_Home"/> </label><br>
-
-    <label>สีของอาการ<select name="color_name">
-        <option value="">choose</option>
-        <?php foreach($colormodellist6 as $newcolor){
-            echo "<option value=$newcolor->color_name>$newcolor->color_name</option>";
-        }?>
-        </select></label><br>
+    <label>อาการเบื้องต้น<input type="text" name="initial_symptoms"/> </label><br>
     
     <label>รหัสATK<select name="id_atk">
         <option value="">choose</option>
