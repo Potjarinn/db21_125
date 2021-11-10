@@ -8,13 +8,6 @@
         </select></label><br>
 
 
-    <label>ชื่อผู้ป่วย<select name="id_card">
-        <option value="">choose</option>
-        <?php foreach($peoplemodellist7 as $namep){
-            echo "<option value=$namep->id_card>$namep->NamePeople $namep->LastnameP</option>";
-        }?>
-        </select></label><br>
-
     <label>ที่อยู่ผู้ป่วย<input type="text" name="address_Home"/> </label><br>
     <label>เขต<input type="text" name="county_Home"/> </label><br>
     <label>จังหวัด<input type="text" name="province_Home"/> </label><br>
